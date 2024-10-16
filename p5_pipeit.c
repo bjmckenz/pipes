@@ -86,6 +86,8 @@ int main(int argc, char* argv[])
         _exit(1);
     }
 
+    wait(NULL);
+    wait(NULL);
     printf("parent %s pid is %d. forked %d and %d. Parent exiting\n",
         argv[0], getpid(), command1_pid, command2_pid);
     return 0;
