@@ -17,5 +17,8 @@ int main(int argc, char *argv[]) {
     // assumes that the first param is a absolute path to the executable
     execve(newargv[0], newargv, NULL);
 
+    printf("Exec failed\n");
+
+    _exit(1);
     return 0;
 }

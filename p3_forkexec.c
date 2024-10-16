@@ -27,7 +27,8 @@ int main(int argc, char* argv[])
         execve(
             newargv[0], newargv, NULL);
 
-        // no need to exit!
+        printf("Exec failed\n");
+        _exit(1);
     }
 
     printf("%s pid is %d. forked %d. "

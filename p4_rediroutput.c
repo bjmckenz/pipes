@@ -40,6 +40,7 @@ int main(int argc, char* argv[])
         execve(newargv[0], newargv, NULL);
     }
 
+    wait(NULL);
     printf("%s pid is %d. forked %d. "
            "Parent exiting\n",
         argv[0], getpid(), child_pid);
