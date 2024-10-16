@@ -86,8 +86,14 @@ int main(int argc, char* argv[])
         _exit(1);
     }
 
-    wait(NULL);
-    wait(NULL);
+#ifdef WAIT_FOR_CHILDREN
+    int wait_status;
+    waitpid(command1_pid, &wait_status, 0);
+    printf("command 1 exited with status %d\n", WEXITSTATUS(wait_status));
+    waitpid(command2_pid, &wait_status, WNOHANG);
+    printf("command 2 exited with status %d\n", WEXITSTATUS(wait_status));
+#endif
+
     printf("parent %s pid is %d. forked %d and %d. Parent exiting\n",
         argv[0], getpid(), command1_pid, command2_pid);
     return 0;
