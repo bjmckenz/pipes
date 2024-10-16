@@ -58,3 +58,4 @@ p3_forkexec
 p4_rediroutput
 results.txt
 p5_pipeit
+*.txt
