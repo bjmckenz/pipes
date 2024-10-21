@@ -55,7 +55,7 @@ int main(int argc, char* argv[])
     copy_ptrs_from_to(second_cmd, argv, commands_separator_ix + 1, argc - 1);
 
 
-    // creates a pair of pipes: write to pipe_from_read_to_write[1], read from pipe_from_read_to_write[0]
+    // creates a SINGLE pipe: write to pipe_from_read_to_write[1], read from pipe_from_read_to_write[0]
     int pipe_from_read_to_write[2];
     pipe(pipe_from_read_to_write);
 
